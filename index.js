@@ -9,7 +9,6 @@
 //     .then(data => console.log(data))
 //     .catch(error => console.error(error));
 
-fetchData();
 
 async function fetchData() {
 
@@ -28,7 +27,7 @@ async function fetchData() {
         const pokemonSprite = data.sprites.front_default;
         const imgElement = document.getElementById("pokemonspirte")
 
-        imgElement.src = pokemonSprite;
+
         imgElement.style.width = "200px";
         imgElement.style.height = "200px";
 
@@ -64,4 +63,10 @@ async function getPokemonData() {
 }
 
 // Call the function to fetch the data
-getPokemonData();
+
+
+const submitButton = document.getElementById("submit-button")
+submitButton.addEventListener("click", () => {
+    fetchData()
+    getPokemonData()
+})
